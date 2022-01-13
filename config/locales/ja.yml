@@ -218,6 +218,7 @@ ja:
       author: '記者'
       picture: '画像'
       new_book: '本の新規登録'
+      edit_book: '本を修正する'
     actions:
       show: '表す'
       edit: '修正'
