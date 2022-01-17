@@ -10,6 +10,11 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
+      <%= link_to t("views.layouts.application.profile"), edit_user_registration_path %>
+      <%= link_to t("views.layouts.application.user_list"), users_path %>
+      <%= link_to t("views.layouts.application.sign_out"), destroy_user_session_path, method: :delete %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
