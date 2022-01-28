@@ -7,6 +7,10 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+  attributes:
+    user:
+      email: メール
+      created_at: 作成時間
   date:
     abbr_day_names:
     - 日
@@ -221,8 +225,14 @@ ja:
       previous: '前'
       next: '次'
       truncate: '...'
+    layouts:
+      application:
+        sign_out: ログアウト
+        profile: プロファイル
+        user_list: ユーザー一覧
   controllers:
     common:
       notice_create: "%{name}が作成されました。"
       notice_update: "%{name}が更新されました。"
       notice_destroy: "%{name}が削除されました。"
+  
