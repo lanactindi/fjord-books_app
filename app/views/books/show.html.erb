@@ -19,6 +19,23 @@
   <strong><%= Book.human_attribute_name(:picture) %>:</strong>
   <%= image_tag(@book.picture_url) if @book.picture.present? %>
 </p>
+<p>
+  <h1><%= Comment.model_name.human %>:</h1>
+<table>
+  <thead>
+    <tr>
+      <th><%= Book.human_attribute_name(:user) %></th>
+      <th><%= Book.human_attribute_name(:content) %></th>
+      <th><%= Book.human_attribute_name(:created_at) %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
+  <tbody>
+    <%= render partial: 'comments/comment', collection: @book.comments %>
+  </tbody>
+</table>
+  <%= render 'comments/form', commentable: @book %>
+</p>
 <%= link_to t('views.common.edit'), edit_book_path(@book) %> |
 <%= link_to t('views.common.back'), books_path %>
