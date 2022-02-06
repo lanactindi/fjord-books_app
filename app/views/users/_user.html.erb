@@ -1,10 +1,8 @@
 <% users.each do |user| %>
-  <tr>
-  <th>
-      <% if user.avatar.attached? %>
-      <%= image_tag user.avatar.variant(resize_to_fill: [30, 30])%>
-      <% end %>
-  </th>
-  <td><%= user.email %></td>
-  </tr>
+  <li>
+  <% if user.avatar.attached? %>
+    <%= image_tag user.avatar.variant(resize_to_fill: [30, 30])%>
+  <% end %>
+  <%= user.email %>
+  </li>
 <% end %>

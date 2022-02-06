@@ -1,9 +1,9 @@
 <div class="col-md-8">
-  <h3><%= @title %>
-</h3>
+  <h3><%= t('views.common.followers') %></h3>
   <% if @users.any? %>
     <ul class="users follow">
       <%= render partial: 'user', locals: {users: @users }%>
+      <br/>
     </ul>
     <%= paginate @users %>
   <% end %>

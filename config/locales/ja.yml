@@ -219,7 +219,7 @@ ja:
       sign_out: ログアウト
       minimum_length: "%{length}文字以上"
       followers: フォロワー
-      following: フォローイング
+      followings: フォローイング
       unfollow: フォローを解除する
       follow: フォローする
     pagination:
@@ -233,8 +233,6 @@ ja:
       notice_create: "%{name}が作成されました。"
       notice_update: "%{name}が更新されました。"
       notice_destroy: "%{name}が削除されました。"
-      following: フォローイング
-      followers: フォローワー
   layouts:
     application:
       menu: メニュー
