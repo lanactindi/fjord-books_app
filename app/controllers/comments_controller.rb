@@ -7,8 +7,8 @@ class CommentsController < ApplicationController
   def create
     @comment = @commentable.comments.build(comment_params)
     @comment.user = current_user
-    if @comment.save
-      redirect_to @commentable, notice: 'Comment was successfully created.'
+    if @comment.save!
+      redirect_to @commentable, notice: t('controllers.common.notice_create', name: @commentable.model_name.human)
     else
       redirect_to @commentable
     end
@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
   # DELETE /comments/1 or /comments/1.json
   def destroy
     @comment.destroy
-    redirect_to @comment.commentable, notice: 'Comment was successfully destroyed.'
+    redirect_to @commentable, notice: t('controllers.common.notice_destroy', name: @commentable.model_name.human)
   end
 
   private
