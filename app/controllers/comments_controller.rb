@@ -7,10 +7,11 @@ class CommentsController < ApplicationController
   def create
     @comment = @commentable.comments.build(comment_params)
     @comment.user = current_user
-    if @comment.save!
+    if @comment.save
       redirect_to @commentable, notice: t('controllers.common.notice_create', name: @commentable.model_name.human)
     else
-      redirect_to @commentable
+      flash.now[:alert] = "#{Comment.model_name.human}#{t('errors.messages.blank')}"
+      render @commentable_template
     end
   end
 

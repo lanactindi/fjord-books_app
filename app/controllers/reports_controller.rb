@@ -3,6 +3,7 @@
 class ReportsController < ApplicationController
   before_action :set_report, only: %i[show edit update destroy]
   before_action :check_current_user, only: %i[edit update destroy]
+  before_action :set_commentable_template, only: :show
 
   def index
     @reports = Report.order(:id).page(params[:page])
@@ -66,5 +67,9 @@ class ReportsController < ApplicationController
 
   def report_params
     params.fetch(:report).permit(:title, :content)
+  end
+
+  def set_commentable_template
+    @commentable_template = 'reports/show'
   end
 end
