@@ -15,12 +15,6 @@ class CommentsController < ApplicationController
     end
   end
 
-  # DELETE /comments/1 or /comments/1.json
-  def destroy
-    @comment.destroy
-    redirect_to @commentable, notice: t('controllers.common.notice_destroy', name: @commentable.model_name.human)
-  end
-
   private
 
   # Use callbacks to share common setup or constraints between actions.
