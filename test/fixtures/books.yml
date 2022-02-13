@@ -1,9 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  memo: MyText
+peter:
+  title: first book
+  memo: this is peter's first book
 
-two:
-  title: MyString
-  memo: MyText
+gwen:
+  title: second book
+  memo: this is gwen's second book
