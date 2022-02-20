@@ -16,9 +16,8 @@ class ReportTest < ActiveSupport::TestCase
   end
 
   test '#created_on' do
+    travel_to Time.zone.today
     report = reports(:peter)
     assert_equal report.created_on, Time.zone.today
-    assert_not_equal report.created_on, Time.zone.today - 1
-    assert_not_equal report.created_on, Time.zone.today + 1
   end
 end
