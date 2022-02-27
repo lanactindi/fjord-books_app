@@ -14,11 +14,11 @@ class User < ApplicationRecord
   has_one_attached :avatar
 
   def follow(other_user)
-    active_relationships.new(following_id: other_user.id)
+    active_relationships.create!(following_id: other_user.id)
   end
 
   def unfollow(other_user)
-    active_relationships.find_by(following_id: other_user.id)
+    active_relationships.find_by_following_id!(other_user.id).destroy
   end
 
   def following?(other_user)
