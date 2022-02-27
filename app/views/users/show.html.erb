@@ -33,6 +33,10 @@
   <% end %>
 </p>
 
+<section class="stats">
+  <%= render 'follow_number' %>
+</section>
+<%= render 'follow_form' if user_signed_in? %>
 <% if current_user == @user %>
   <%= link_to t('views.common.edit'), edit_user_registration_path %> |
 <% end %>
